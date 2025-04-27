@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-dark: #1F1F1F;
+    --dark-gray-1: #474747;
+    --dark-gray-2: #666666;
+    --light-gray-1: #8F8F8F;
+    --light-gray-2: #CCCCCC;
+    --light-gray-3: #F5F5F5;
+    --white: #FFFFFF;
+    --primary: #C92071;
+    --secundary: #B5B6F2;
+    --tTertiary: #991956;
+    --error: #EE4266;
+    --success: #52CA76;
+    --warning: #F6AA1C;
+    --primary-g: linear-gradient(top, #C92071 0%, #EDABCA 100%);
+    --secondary-g: linear-gradient(top, #B5B6F2 0%, #EFEFFF 100%);
+    --offset: 40px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr;
+    place-items: center;
+    max-width: 1440px;
+
+}
+
+/* Header */
+header {
+    border: 2px groove var(--color-dark);
+    width: 1440px;
+    height: 192px;
+}
+
+/* Section Central Slideshow */
+.slideshow {
+    border: 2px groove var(--color-dark);
+    width: 1440px;
+    height: 681px;
+}
+
+/* Section Central featured_collection - Image */
+.featured_collection {
+    border: 2px groove var(--color-dark);
+    max-width: 1440px;
+}
+
+.img_featured_collection {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.img_featured_collection_img1 {
+    width: 405px;
+    height: 251px;
+    border-radius: 8px;
+    background-color: var(--dark-gray-2);
+}
+
+.img_featured_collection_img2 {
+    width: 405px;
+    height: 251px;
+    border-radius: 8px;
+    background-color: var(--dark-gray-2);
+}
+
+.img_featured_collection_img3 {
+    width: 405px;
+    height: 251px;
+    border-radius: 8px;
+    background-color: var(--dark-gray-2);
+}
+
+/* Section Central featured_collection 2 */
+.featured_collection_2 {
+    display: flex;
+    justify-content: center;
+    max-width: 1440px;
+    margin-top: 20px;
+}
+
+.featured_collection_2_box1 {
+    width: 1067.5px;
+    height: 317.5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+.featured_collection_2_box2 {
+    width: 1067.5px;
+    height: 317.5px;
+    border: none;
+    border-radius: 0;
+    position: relative;
+    /* Necessário para posicionar pseudo-elementos */
+    overflow: hidden;
+    /* Garante que pseudo-elementos fiquem dentro da forma */
+
+    /* Sem background-color na box principal, conforme solicitado */
+    background: none;
+    /* ou background-color: transparent; */
+
+    /* O clip-path é aplicado aqui e nos pseudo-elementos */
+    -webkit-clip-path: polygon(0% 8%, 50% 0%, 100% 8%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 8%, 50% 0%, 100% 8%, 100% 100%, 0% 100%);
+    color: var(--white);
+
+}
+
+/* Pseudo-elemento para a camada preta da borda */
+.featured_collection_2_box2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    /* Cobre toda a área do pai inicialmente */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(231, 223, 223);
+    /* Cor da borda */
+    /* Recorta esta camada na forma do polígono */
+    -webkit-clip-path: polygon(0% 8%, 50% 0%, 100% 8%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 8%, 50% 0%, 100% 8%, 100% 100%, 0% 100%);
+}
+
+/* Pseudo-elemento para a camada interna transparente (o "preenchimento") */
+.featured_collection_2_box2::after {
+    content: '';
+    position: absolute;
+    /* Posiciona e dimensiona para criar a espessura da borda (ex: 2px) */
+    top: 2px;
+    /* Espessura da linha */
+    left: 2px;
+    /* Espessura da linha */
+    width: calc(100% - 4px);
+    /* 100% - (2 * espessura) */
+    height: calc(100% - 4px);
+    /* 100% - (2 * espessura) */
+
+    /* Fundo transparente para mostrar a borda preta ao redor */
+    background-color: transparent;
+    /* Use 'white' se quiser o interior branco */
+
+    /* Recorta esta camada na mesma forma do polígono */
+    -webkit-clip-path: polygon(0% 8%, 50% 0%, 100% 8%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 8%, 50% 0%, 100% 8%, 100% 100%, 0% 100%);
+}

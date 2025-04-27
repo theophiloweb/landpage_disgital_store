@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --color-dark: #1F1F1F;
+    --dark-gray-1: #474747;
+    --dark-gray-2: #666666;
+    --light-gray-1:#8F8F8F;
+    --light-gray-2: #CCCCCC;
+    --light-gray-3: #F5F5F5;
+    --white: #FFFFFF;
+    --primary: #C92071;
+    --secundary: #B5B6F2;
+    --tTertiary: #991956;
+    --error: #EE4266;
+    --success: #52CA76;
+    --warning: #F6AA1C;
+    --primary-g: linear-gradient(top, #C92071 0%, #EDABCA 100%);
+    --secondary-g: linear-gradient(top, #B5B6F2 0%, #EFEFFF 100%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+
+/* Header */
+header{
+    border: 2px groove var(--color-dark);
+    width: 1440px;
+    height: 192px;
+}
+
+.slideshow{
+    border: 2px groove var(--color-dark);
+    width: 1440px;
+    height: 681px;
+}

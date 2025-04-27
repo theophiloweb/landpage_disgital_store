@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Store</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração customizada do Tailwind (opcional, mas útil para cores específicas) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-pink': '#C92071',
+              'brand-yellow': '#E7FF86',
+              'dark-gray-1': '#1F1F1F',
+              'dark-gray-2': '#474747',
+              'dark-gray-3': '#666666',
+              'light-gray-1': '#8F8F8F',
+              'light-gray-2': '#CCCCCC',
+              'off-white': '#F9F8FE',
+              'success': '#3FE864',
+              'error': '#FF4D4F',
+              'warning': '#FACC15',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'], // Certifique-se de importar a fonte Inter se necessário
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon" />
+    <!-- Importar Google Fonts (Exemplo: Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .clip-polygon {
+        clip-path: polygon(0% 8%, 50% 0%, 100% 8%, 100% 100%, 0% 100%);
+      }
+      .dot-pattern {
+        background-image: radial-gradient(#FACC15 1px, transparent 1px);
+        background-size: 10px 10px;
+        background-position: -5px -5px; /* Ajuste para alinhar os pontos */
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-dark-gray-2">
+    <!-- Container principal -->
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <header class="flex flex-col md:flex-row justify-between items-center py-6 border-b border-gray-200">
+        <!-- Logo -->
+        <div class="flex items-center mb-4 md:mb-0">
+          <img src="./images/logo.svg" alt="Logo Digital Store" class="h-8 w-auto mr-2" />
+          <span class="text-2xl font-bold text-dark-gray-1">Digital Store</span>
+        </div>
+
+        <!-- Search Bar & Actions -->
+        <div class="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+          <!-- Search Input -->
+          <div class="relative w-full md:w-[560px]">
+            <input
+              type="text"
+              placeholder="Pesquisar produto..."
+              class="w-full px-4 py-2 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-pink placeholder-light-gray-1 text-sm"
+            />
+            <img
+              src="./images/search.svg"
+              alt="Ícone de busca"
+              class="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 cursor-pointer"
+            />
+          </div>
+          <!-- Register Link (Placeholder - Adjust as needed) -->
+          <a href="#" class="text-dark-gray-2 hover:text-brand-pink underline hidden md:block text-sm">Cadastre-se</a>
+          <!-- Login Button -->
+          <button type="button" class="bg-brand-pink text-white px-6 py-2 rounded-lg hover:opacity-90 transition w-full md:w-auto text-sm font-medium">Entrar</button>
+          <!-- Cart Icon -->
+          <img src="./images/buy0.svg" alt="Carrinho de compras" class="h-6 w-6 cursor-pointer" />
+        </div>
+      </header>
+
+      <!-- Navigation -->
+      <nav class="py-4">
+        <ul class="flex flex-wrap justify-center md:justify-start space-x-8">
+          <li><a href="#" class="font-medium text-brand-pink hover:underline">Home</a></li>
+          <li><a href="#" class="font-medium text-dark-gray-3 hover:text-brand-pink">Produtos</a></li>
+          <li><a href="#" class="font-medium text-dark-gray-3 hover:text-brand-pink">Categorias</a></li>
+          <li><a href="#" class="font-medium text-dark-gray-3 hover:text-brand-pink">Meus Pedidos</a></li>
+        </ul>
+      </nav>
+
+      <main class="py-8">
+        <!-- Hero Section -->
+        <section class="flex flex-col md:flex-row items-center justify-between mb-16 bg-off-white rounded-lg p-8 relative overflow-hidden">
+          <!-- Text Content -->
+          <div class="w-full md:w-1/2 mb-8 md:mb-0 z-10">
+            <p class="text-brand-yellow font-bold mb-2">Melhores ofertas personalizadas</p>
+            <h1 class="text-5xl font-black text-dark-gray-1 mb-4 leading-tight">Queima de<br>Estoque Nike 🔥</h1>
+            <p class="text-dark-gray-3 max-w-md mb-6">
+              Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.
+            </p>
+            <button class="bg-brand-pink text-white px-8 py-3 rounded-lg font-medium hover:opacity-90 transition">Ver Ofertas</button>
+          </div>
+
+          <!-- Image Content -->
+          <div class="w-full md:w-1/2 relative flex justify-center items-center">
+            <img src="./images/tenis.svg" alt="Tênis Nike em promoção" class="w-full max-w-lg mx-auto z-10" />
+            <!-- Dot Pattern Background -->
+            <div class="absolute top-0 right-0 w-32 h-32 dot-pattern opacity-50 z-0"></div>
+          </div>
+           <!-- Slider Dots -->
+           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+            <span class="w-3 h-3 bg-brand-pink rounded-full cursor-pointer"></span>
+            <span class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer hover:bg-gray-400"></span>
+            <span class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer hover:bg-gray-400"></span>
+          </div>
+        </section>
+
+        <!-- Featured Collections Title -->
+        <section class="mb-6">
+          <h2 class="text-xl font-bold text-dark-gray-2">Coleções em destaque</h2>
+        </section>
+
+        <!-- Featured Collections Cards -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <!-- Card 1 -->
+          <div class="relative bg-gray-100 rounded-lg p-6 h-52 flex flex-col justify-between items-start overflow-hidden">
+            <div>
+              <span class="bg-brand-yellow text-dark-gray-1 px-3 py-1 rounded-full font-bold text-xs mb-2 inline-block">30% OFF</span>
+              <h3 class="text-2xl font-bold text-dark-gray-1 mb-2">Novo drop<br>Supreme</h3>
+              <button class="bg-white text-brand-pink px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition text-sm">Comprar</button>
+            </div>
+            <img src="./images/features_colletion_img1.png" class="absolute -right-4 bottom-0 w-40 h-auto object-contain transform " alt="Camiseta Supreme"/>
+          </div>
+          <!-- Card 2 -->
+           <div class="relative bg-gray-100 rounded-lg p-6 h-52 flex flex-col justify-between items-start overflow-hidden">
+            <div>
+              <span class="bg-brand-yellow text-dark-gray-1 px-3 py-1 rounded-full font-bold text-xs mb-2 inline-block">30% OFF</span>
+              <h3 class="text-2xl font-bold text-dark-gray-1 mb-2">Coleção<br>Adidas</h3>
+              <button class="bg-white text-brand-pink px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition text-sm">Comprar</button>
+            </div>
+            <img src="./images/features_colletion_img2.png" class="absolute -right-4 bottom-0 w-48 h-auto object-contain transform " alt="Tênis Adidas"/>
+          </div>
+          <!-- Card 3 -->
+           <div class="relative bg-gray-100 rounded-lg p-6 h-52 flex flex-col justify-between items-start overflow-hidden">
+            <div>
+              <span class="bg-brand-yellow text-dark-gray-1 px-3 py-1 rounded-full font-bold text-xs mb-2 inline-block">30% OFF</span>
+              <h3 class="text-2xl font-bold text-dark-gray-1 mb-2">Novo<br>Beats Bass</h3>
+              <button class="bg-white text-brand-pink px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition text-sm">Comprar</button>
+            </div>
+            <img src="./images/features_colletion_img3.png" class="absolute -right-8 bottom-0 w-40 h-auto object-contain transform " alt="Headphone Beats"/>
+          </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="mb-16 mt-10"> 
+          <div class="relative w-full max-w-5xl mx-auto">
+            <!-- SVG Background -->
+            <svg class="w-full h-auto" viewBox="0 0 1069 319" fill="#F9FAFB" xmlns="http://www.w3.org/2000/svg"> 
+              <path d="M0.5 318V25L528 0.5L1068 25V318H0.5Z" stroke="#D1D5DB"/>
+            </svg>
+
+            <!-- Content inside SVG area -->
+            <div class="absolute inset-0 flex flex-col items-center pt-12">
+              <!-- Title -->
+              <p class="text-center text-dark-gray-2 text-xl font-bold z-10">Coleções em destaque</p>
+            </div>
+
+             <!-- Icons Grid - Posicionado absolutamente em relação ao container da seção -->
+             <div class="absolute grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 inset-x-0 bottom-8 z-30 px-4 justify-items-center">
+                <!-- Icon 1 -->
+                <div class="flex flex-col items-center text-center group cursor-pointer">
+                  <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-2 group-hover:shadow-xl transition">
+                    <img src="./images/ico1.svg" alt="Camisetas" class="h-12 w-12" />
+                  </div>
+                  <p class="text-dark-gray-2 font-bold text-sm">Camisetas</p>
+                </div>
+                <!-- Icon 2 -->
+                <div class="flex flex-col items-center text-center group cursor-pointer">
+                  <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-2 group-hover:shadow-xl transition">
+                    <img src="./images/ico2.svg" alt="Calças" class="h-12 w-12" />
+                  </div>
+                  <p class="text-dark-gray-2 font-bold text-sm">Calças</p>
+                </div>
+                <!-- Icon 3 -->
+                <div class="flex flex-col items-center text-center group cursor-pointer">
+                  <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-2 group-hover:shadow-xl transition">
+                    <img src="./images/ico3.svg" alt="Bonés" class="h-12 w-12" />
+                  </div>
+                  <p class="text-dark-gray-2 font-bold text-sm">Bonés</p>
+                </div>
+                <!-- Icon 4 -->
+                <div class="flex flex-col items-center text-center group cursor-pointer">
+                  <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-2 group-hover:shadow-xl transition">
+                    <img src="./images/ico4.svg" alt="Headphones" class="h-12 w-12" />
+                  </div>
+                  <p class="text-dark-gray-2 font-bold text-sm">Headphones</p>
+                </div>
+                <!-- Icon 5 -->
+                <div class="flex flex-col items-center text-center group cursor-pointer">
+                  <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-2 group-hover:shadow-xl transition">
+                    <img src="./images/ico5.svg" alt="Tênis" class="h-12 w-12" />
+                  </div>
+                  <p class="text-dark-gray-2 font-bold text-sm">Tênis</p>
+                </div>
+              </div>
+          </div>
+        </section>
+
+        <!-- Trending Products Section -->
+        <section class="mt-24 mb-16"> 
+          <!-- Title and Link -->
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-xl font-bold text-dark-gray-2">Produtos em alta</h2>
+            <a href="#" class="flex items-center gap-1 text-brand-pink hover:underline font-medium">
+              <span>Ver todos</span>
+              <img src="./images/Right%2024px.svg" alt="Seta para a direita" class="h-5 w-5" />
+            </a>
+          </div>
+
+          <!-- Products Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Product Card 1 -->
+            <div class="bg-white p-4 rounded-lg hover:shadow-lg transition cursor-pointer group border-2 border-transparent hover:border-blue-300"> 
+              <div class="bg-gray-100 rounded-lg p-4 mb-4 relative">
+                 <span class="absolute top-2 left-2 bg-brand-yellow text-dark-gray-1 px-3 py-1 rounded-full font-bold text-xs">30% OFF</span>
+                 <img src="./images/layer-1-aa-2.svg" alt="Tênis K-Swiss" class="mx-auto h-40 object-contain group-hover:scale-105 transition duration-300" />
+              </div>
+              <p class="text-xs text-light-gray-1 font-bold mb-1">Tênis</p>
+              <h3 class="text-base text-dark-gray-3 font-medium mb-2 h-10">K-Swiss V8 - Masculino</h3>
+              <div class="flex items-center gap-2">
+                <p class="text-sm text-light-gray-1 line-through">$200</p>
+                <p class="text-lg text-dark-gray-1 font-bold">$100</p>
+              </div>
+            </div>
+            <!-- Product Card 2 -->
+            <div class="bg-white p-4 rounded-lg hover:shadow-lg transition cursor-pointer group border-2 border-transparent hover:border-blue-300">
+              <div class="bg-gray-100 rounded-lg p-4 mb-4 relative">
+                 <span class="absolute top-2 left-2 bg-brand-yellow text-dark-gray-1 px-3 py-1 rounded-full font-bold text-xs">30% OFF</span>
+                 <img src="./images/layer-1-aa-2.svg" alt="Tênis K-Swiss" class="mx-auto h-40 object-contain group-hover:scale-105 transition duration-300" />
+              </div>
+              <p class="text-xs text-light-gray-1 font-bold mb-1">Tênis</p>
+              <h3 class="text-base text-dark-gray-3 font-medium mb-2 h-10">K-Swiss V8 - Masculino</h3>
+              <div class="flex items-center gap-2">
+                <p class="text-sm text-light-gray-1 line-through">$200</p>
+                <p class="text-lg text-dark-gray-1 font-bold">$100</p>
+              </div>
+            </div>
+            <!-- Product Card 3 -->
+             <div class="bg-white p-4 rounded-lg hover:shadow-lg transition cursor-pointer group border-2 border-transparent hover:border-blue-300">
+              <div class="bg-gray-100 rounded-lg p-4 mb-4 relative">
+                 <span class="absolute top-2 left-2 bg-brand-yellow text-dark-gray-1 px-3 py-1 rounded-full font-bold text-xs">30% OFF</span>
+                 <img src="./images/layer-1-aa-2.svg" alt="Tênis K-Swiss" class="mx-auto h-40 object-contain group-hover:scale-105 transition duration-300" />
+              </div>
+              <p class="text-xs text-light-gray-1 font-bold mb-1">Tênis</p>
+              <h3 class="text-base text-dark-gray-3 font-medium mb-2 h-10">K-Swiss V8 - Masculino</h3>
+              <div class="flex items-center gap-2">
+                <p class="text-sm text-light-gray-1 line-through">$200</p>
+                <p class="text-lg text-dark-gray-1 font-bold">$100</p>
+              </div>
+            </div>
+            <!-- Product Card 4 -->
+             <div class="bg-white p-4 rounded-lg hover:shadow-lg transition cursor-pointer group border-2 border-transparent hover:border-blue-300">
+              <div class="bg-gray-100 rounded-lg p-4 mb-4 relative">
+                 <span class="absolute top-2 left-2 bg-brand-yellow text-dark-gray-1 px-3 py-1 rounded-full font-bold text-xs">30% OFF</span>
+                 <img src="./images/layer-1-aa-2.svg" alt="Tênis K-Swiss" class="mx-auto h-40 object-contain group-hover:scale-105 transition duration-300" />
+              </div>
+              <p class="text-xs text-light-gray-1 font-bold mb-1">Tênis</p>
+              <h3 class="text-base text-dark-gray-3 font-medium mb-2 h-10">K-Swiss V8 - Masculino</h3>
+              <div class="flex items-center gap-2">
+                <p class="text-sm text-light-gray-1 line-through">$200</p>
+                <p class="text-lg text-dark-gray-1 font-bold">$100</p>
+              </div>
+            </div>
+            <!-- Product Card 5 -->
+             <div class="bg-white p-4 rounded-lg hover:shadow-lg transition cursor-pointer group border-2 border-transparent hover:border-blue-300">
+              <div class="bg-gray-100 rounded-lg p-4 mb-4 relative">
+                 <span class="absolute top-2 left-2 bg-brand-yellow text-dark-gray-1 px-3 py-1 rounded-full font-bold text-xs">30% OFF</span>
+                 <img src="./images/layer-1-aa-2.svg" alt="Tênis K-Swiss" class="mx-auto h-40 object-contain group-hover:scale-105 transition duration-300" />
+              </div>
+              <p class="text-xs text-light-gray-1 font-bold mb-1">Tênis</p>
+              <h3 class="text-base text-dark-gray-3 font-medium mb-2 h-10">K-Swiss V8 - Masculino</h3>
+              <div class="flex items-center gap-2">
+                <p class="text-sm text-light-gray-1 line-through">$200</p>
+                <p class="text-lg text-dark-gray-1 font-bold">$100</p>
+              </div>
+            </div>
+            <!-- Product Card 6 -->
+             <div class="bg-white p-4 rounded-lg hover:shadow-lg transition cursor-pointer group border-2 border-transparent hover:border-blue-300">
+              <div class="bg-gray-100 rounded-lg p-4 mb-4 relative">
+                 <span class="absolute top-2 left-2 bg-brand-yellow text-dark-gray-1 px-3 py-1 rounded-full font-bold text-xs">30% OFF</span>
+                 <img src="./images/layer-1-aa-2.svg" alt="Tênis K-Swiss" class="mx-auto h-40 object-contain group-hover:scale-105 transition duration-300" />
+              </div>
+              <p class="text-xs text-light-gray-1 font-bold mb-1">Tênis</p>
+              <h3 class="text-base text-dark-gray-3 font-medium mb-2 h-10">K-Swiss V8 - Masculino</h3>
+              <div class="flex items-center gap-2">
+                <p class="text-sm text-light-gray-1 line-through">$200</p>
+                <p class="text-lg text-dark-gray-1 font-bold">$100</p>
+              </div>
+            </div>
+            <!-- Product Card 7 -->
+             <div class="bg-white p-4 rounded-lg hover:shadow-lg transition cursor-pointer group border-2 border-transparent hover:border-blue-300">
+              <div class="bg-gray-100 rounded-lg p-4 mb-4 relative">
+                 <span class="absolute top-2 left-2 bg-brand-yellow text-dark-gray-1 px-3 py-1 rounded-full font-bold text-xs">30% OFF</span>
+                 <img src="./images/layer-1-aa-2.svg" alt="Tênis K-Swiss" class="mx-auto h-40 object-contain group-hover:scale-105 transition duration-300" />
+              </div>
+              <p class="text-xs text-light-gray-1 font-bold mb-1">Tênis</p>
+              <h3 class="text-base text-dark-gray-3 font-medium mb-2 h-10">K-Swiss V8 - Masculino</h3>
+              <div class="flex items-center gap-2">
+                <p class="text-sm text-light-gray-1 line-through">$200</p>
+                <p class="text-lg text-dark-gray-1 font-bold">$100</p>
+              </div>
+            </div>
+            <!-- Product Card 8 -->
+             <div class="bg-white p-4 rounded-lg hover:shadow-lg transition cursor-pointer group border-2 border-transparent hover:border-blue-300">
+              <div class="bg-gray-100 rounded-lg p-4 mb-4 relative">
+                 <span class="absolute top-2 left-2 bg-brand-yellow text-dark-gray-1 px-3 py-1 rounded-full font-bold text-xs">30% OFF</span>
+                 <img src="./images/layer-1-aa-2.svg" alt="Tênis K-Swiss" class="mx-auto h-40 object-contain group-hover:scale-105 transition duration-300" />
+              </div>
+              <p class="text-xs text-light-gray-1 font-bold mb-1">Tênis</p>
+              <h3 class="text-base text-dark-gray-3 font-medium mb-2 h-10">K-Swiss V8 - Masculino</h3>
+              <div class="flex items-center gap-2">
+                <p class="text-sm text-light-gray-1 line-through">$200</p>
+                <p class="text-lg text-dark-gray-1 font-bold">$100</p>
+              </div>
+            </div>
+            <!-- --- End Product Cards --- -->
+          </div>
+        </section>
+
+        <!-- Special Offer Section -->
+        <section class="flex flex-col md:flex-row justify-between items-center gap-8 py-12 bg-white mb-16">
+          <!-- Image Side -->
+          <div class="relative w-full md:w-1/2 flex justify-center items-center">
+            <!-- Background Circle -->
+            <div class="absolute w-[400px] h-[400px] md:w-[466px] md:h-[466px] rounded-full border border-gray-300 bg-gradient-to-br from-purple-100/50 via-white to-white/0 -z-10"></div>
+            <!-- Product Image -->
+            <img src="./images/Laye 1.svg" alt="Air Jordan Edição de Colecionador" class="relative z-10 w-full max-w-md object-contain" />
+          </div>
+
+          <!-- Text Side -->
+          <div class="w-full md:w-1/2 flex flex-col gap-4 px-4 text-center md:text-left">
+            <p class="text-brand-pink font-bold">Oferta especial</p>
+            <h2 class="text-4xl font-bold text-dark-gray-1 leading-tight">Air Jordan edição<br>de colecionador</h2>
+            <p class="text-dark-gray-3">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+            </p>
+            <button class="bg-brand-pink text-white py-3 px-8 rounded-lg w-full md:w-48 cursor-pointer hover:opacity-90 transition font-medium self-center md:self-start">Ver oferta</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark-gray-1 text-white py-12">
+      <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-5 gap-8">
+        <!-- Logo & Socials -->
+        <div class="space-y-4 col-span-1 md:col-span-2">
+          <div class="flex items-center">
+             <img src="./images/logo_rodape.svg" alt="Logo Digital Store Branca" class="h-8 w-auto mr-2" />
+             <span class="text-2xl font-bold">Digital Store</span>
+          </div>
+          <p class="text-light-gray-2 text-sm max-w-xs">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex space-x-4">
+            <a href="#" aria-label="Facebook"><img src="./images/network_socials.svg" alt="Facebook" class="h-5 w-124 hover:opacity-80 transition"/></a>           
+          </div>
+        </div>
+
+        <!-- Information Links -->
+        <div class="space-y-3">
+          <p class="font-bold text-base mb-4">Informação</p>
+          <a href="#" class="block text-light-gray-2 hover:text-white text-sm">Sobre Drip Store</a>
+          <a href="#" class="block text-light-gray-2 hover:text-white text-sm">Segurança</a>
+          <a href="#" class="block text-light-gray-2 hover:text-white text-sm">Wishlist</a>
+          <a href="#" class="block text-light-gray-2 hover:text-white text-sm">Blog</a>
+          <a href="#" class="block text-light-gray-2 hover:text-white text-sm">Trabalhe conosco</a>
+          <a href="#" class="block text-light-gray-2 hover:text-white text-sm">Meus Pedidos</a>
+        </div>
+
+        <!-- Categories Links -->
+        <div class="space-y-3">
+          <p class="font-bold text-base mb-4">Categorias</p>
+          <a href="#" class="block text-light-gray-2 hover:text-white text-sm">Camisetas</a>
+          <a href="#" class="block text-light-gray-2 hover:text-white text-sm">Calças</a>
+          <a href="#" class="block text-light-gray-2 hover:text-white text-sm">Bonés</a>
+          <a href="#" class="block text-light-gray-2 hover:text-white text-sm">Headphones</a>
+          <a href="#" class="block text-light-gray-2 hover:text-white text-sm">Tênis</a>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-3">
+           <p class="font-bold text-base mb-4">Contato</p>
+           <p class="text-light-gray-2 text-sm">
+            Av. Santos Dumont, 1510 - 1 andar - Aldeota, Fortaleza - CE, 60150-161
+          </p>
+          <p class="text-light-gray-2 text-sm">(85) 3051-3411</p>
+        </div>
+      </div>
+      <!-- Copyright -->
+      <div class="text-center text-light-gray-2 text-xs mt-10 pt-6 border-t border-dark-gray-2">
+        @ 2024 Digital College
+      </div>
+    </footer>
+
+    <!-- Script para remover placeholders (se ainda existirem) -->
+    <script>
+      // Remove o placeholder do React/JSX que pode ter sido copiado
+      const placeholder = document.querySelector('body > script:last-of-type');
+      if (placeholder && placeholder.textContent.includes('{[...Array(8)]')) {
+         placeholder.remove();
+      }
+       const jsxPlaceholder = document.createComment("{[...Array(8)].map((_, i) => ( ... ))}");
+       const gridSection = document.querySelector('.grid.grid-cols-1.sm\\:grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-4.gap-6');
+       if (gridSection) {
+           const placeholderNode = Array.from(gridSection.childNodes).find(node => node.nodeType === Node.COMMENT_NODE && node.textContent.includes('{[...Array(8)]'));
+           if (placeholderNode) {
+               placeholderNode.remove();
+           }
+           // Remove também o comentário final se existir
+            const endCommentNode = Array.from(gridSection.childNodes).find(node => node.nodeType === Node.COMMENT_NODE && node.textContent.includes('--- End Product Card Repetition ---'));
+            if (endCommentNode) {
+               endCommentNode.remove();
+           }
+       }
+    </script>
+  </body>
+</html>

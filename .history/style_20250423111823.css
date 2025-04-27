@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-dark: #1F1F1F;
+    --dark-gray-1: #474747;
+    --dark-gray-2: #666666;
+    --light-gray-1: #8F8F8F;
+    --light-gray-2: #CCCCCC;
+    --light-gray-3: #F5F5F5;
+    --white: #FFFFFF;
+    --primary: #C92071;
+    --secundary: #B5B6F2;
+    --tTertiary: #991956;
+    --error: #EE4266;
+    --success: #52CA76;
+    --warning: #F6AA1C;
+    --primary-g: linear-gradient(top, #C92071 0%, #EDABCA 100%);
+    --secondary-g: linear-gradient(top, #B5B6F2 0%, #EFEFFF 100%);
+    --offset: 40px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr;
+    place-items: center;
+    max-width: 1440px;
+
+}
+
+/* Header */
+header {
+    border: 2px groove var(--color-dark);
+    width: 1440px;
+    height: 192px;
+}
+
+/* Section Central Slideshow */
+.slideshow {
+    border: 2px groove var(--color-dark);
+    width: 1440px;
+    height: 681px;
+}
+
+/* Section Central featured_collection - Image */
+.featured_collection {
+    border: 2px groove var(--color-dark);
+    max-width: 1440px;
+}
+
+.img_featured_collection {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.img_featured_collection_img1 {
+    width: 405px;
+    height: 251px;
+    border-radius: 8px;
+    background-color: var(--dark-gray-2);
+}
+
+.img_featured_collection_img2 {
+    width: 405px;
+    height: 251px;
+    border-radius: 8px;
+    background-color: var(--dark-gray-2);
+}
+
+.img_featured_collection_img3 {
+    width: 405px;
+    height: 251px;
+    border-radius: 8px;
+    background-color: var(--dark-gray-2);
+}
+
+/* Section Central featured_collection 2 */
+.featured_collection_2 {
+    display: flex;
+    justify-content: center;
+    max-width: 1440px;
+    margin-top: 10px;
+}
+
+.featured_collection_2_box1 {
+    width: 1067.5px;
+    height: 317.5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    /* Adicione uma borda ou fundo para a box1 se quiser que ela apareça */
+    border: 1px solid #ccc;
+    /* Exemplo de borda clara para a box1 */
+}
+
+.featured_collection_2_box2 {
+    width: 1067.5px;
+    height: 317.5px;
+    border: 2px solid black;
+    /* Remove a borda padrão */
+    border-radius: 0;
+    /* Remove border-radius */
+    position: relative;
+    /* Necessário para o pseudo-elemento */
+    overflow: hidden;
+    /* Garante o recorte */
+
+    /* Cor da borda do polígono (preto, conforme SVG) */
+
+
+    /* Define a forma exata do polígono baseada no SVG */
+    /* polygon(ponto-sup-esq-lado, pico, ponto-sup-dir-lado, inf-dir, inf-esq) */
+    -webkit-clip-path: polygon(0% 8%, 50% 0%, 100% 8%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 8%, 50% 0%, 100% 8%, 100% 100%, 0% 100%);
+
+    box-sizing: border-box;
+}
+
+/* Pseudo-elemento para criar a área transparente dentro do polígono */
+.featured_collection_2_box2::before {
+    content: '';
+    position: absolute;
+    /* Posição e tamanho para simular a borda (ex: 2px de espessura) */
+    top: 2px;
+    /* Ajuste a espessura da linha aqui */
+    left: 2px;
+    /* Ajuste a espessura da linha aqui */
+    width: calc(100% - 4px);
+    /* 100% - (2 * espessura) */
+    height: calc(100% - 4px);
+    /* 100% - (2 * espessura) */
+
+    /* Fundo transparente para mostrar apenas a borda preta do polígono */
+    background-color: transparent;
+    /* Use 'white' se quiser o interior branco */
+
+    /* Aplica o mesmo clip-path */
+    -webkit-clip-path: polygon(0% 8%, 50% 0%, 100% 8%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 8%, 50% 0%, 100% 8%, 100% 100%, 0% 100%);
+}

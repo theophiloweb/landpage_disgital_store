@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-dark: #1F1F1F;
+    --dark-gray-1: #474747;
+    --dark-gray-2: #666666;
+    --light-gray-1: #8F8F8F;
+    --light-gray-2: #CCCCCC;
+    --light-gray-3: #F5F5F5;
+    --white: #FFFFFF;
+    --primary: #C92071;
+    --secundary: #B5B6F2;
+    --tTertiary: #991956;
+    --error: #EE4266;
+    --success: #52CA76;
+    --warning: #F6AA1C;
+    --primary-g: linear-gradient(top, #C92071 0%, #EDABCA 100%);
+    --secondary-g: linear-gradient(top, #B5B6F2 0%, #EFEFFF 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr;
+    place-items: center;
+    max-width: 1440px;
+
+}
+
+/* Header */
+header {
+    border: 2px groove var(--color-dark);
+    width: 1440px;
+    height: 192px;
+}
+
+/* Section Central Slideshow */
+.slideshow {
+    border: 2px groove var(--color-dark);
+    width: 1440px;
+    height: 681px;
+}
+
+/* Section Central featured_collection - Image */
+.featured_collection {
+    border: 2px groove var(--color-dark);
+    max-width: 1440px;
+}
+
+.img_featured_collection {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.img_featured_collection_img1 {
+    width: 405px;
+    height: 251px;
+    border-radius: 8px;
+    background-color: var(--dark-gray-2);
+}
+
+.img_featured_collection_img2 {
+    width: 405px;
+    height: 251px;
+    border-radius: 8px;
+    background-color: var(--dark-gray-2);
+}
+
+.img_featured_collection_img3 {
+    width: 405px;
+    height: 251px;
+    border-radius: 8px;
+    background-color: var(--dark-gray-2);
+}
+
+/* Section Central featured_collection 2 */
+.featured_collection_2 {
+    display: flex;
+    justify-content: center;
+    max-width: 1440px;
+    margin-top: 10px;
+}
+
+.featured_collection_2_box1 {
+    width: 1067.5px;
+    height: 317.5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    /* Borda clara para o retângulo externo */
+    border: 1px solid #a0a0a0;
+    /* Cor de borda clara */
+}
+
+.featured_collection_2_box2 {
+    width: 1067.5px;
+    height: 317.5px;
+    border: none;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    /* Cor da borda do polígono */
+    background-color: #a0a0a0;
+    /* Define a forma de polígono conforme a foto */
+    -webkit-clip-path: polygon(5% 0%, 50% 20%, 0% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(10% 0%, 50% 10%, 95% 0%, 100% 100%, 0% 100%);
+    box-sizing: border-box;
+}
+
+.featured_collection_2_box2::before {
+    content: '';
+    position: absolute;
+    /* Posição e tamanho para simular a borda (ex: 2px de espessura) */
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    /* Fundo transparente para mostrar apenas a borda */
+    background-color: transparent;
+    /* Aplica o mesmo clip-path */
+    -webkit-clip-path: polygon(5% 0%, 50% 10%, 95% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(5% 0%, 50% 10%, 95% 0%, 100% 100%, 0% 100%);
+}

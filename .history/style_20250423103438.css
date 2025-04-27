@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-dark: #1F1F1F;
+    --dark-gray-1: #474747;
+    --dark-gray-2: #666666;
+    --light-gray-1: #8F8F8F;
+    --light-gray-2: #CCCCCC;
+    --light-gray-3: #F5F5F5;
+    --white: #FFFFFF;
+    --primary: #C92071;
+    --secundary: #B5B6F2;
+    --tTertiary: #991956;
+    --error: #EE4266;
+    --success: #52CA76;
+    --warning: #F6AA1C;
+    --primary-g: linear-gradient(top, #C92071 0%, #EDABCA 100%);
+    --secondary-g: linear-gradient(top, #B5B6F2 0%, #EFEFFF 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr;
+    place-items: center;
+    max-width: 1440px;
+
+}
+
+/* Header */
+header {
+    border: 2px groove var(--color-dark);
+    width: 1440px;
+    height: 192px;
+}
+
+/* Section Central Slideshow */
+.slideshow {
+    border: 2px groove var(--color-dark);
+    width: 1440px;
+    height: 681px;
+}
+
+/* Section Central featured_collection - Image */
+.featured_collection {
+    border: 2px groove var(--color-dark);
+    max-width: 1440px;
+}
+
+.img_featured_collection {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.img_featured_collection_img1 {
+    width: 405px;
+    height: 251px;
+    border-radius: 8px;
+    background-color: var(--dark-gray-2);
+}
+
+.img_featured_collection_img2 {
+    width: 405px;
+    height: 251px;
+    border-radius: 8px;
+    background-color: var(--dark-gray-2);
+}
+
+.img_featured_collection_img3 {
+    width: 405px;
+    height: 251px;
+    border-radius: 8px;
+    background-color: var(--dark-gray-2);
+}
+
+/* Section Central featured_collection 2 */
+
+.featured_collection_2 {
+    display: flex;
+    justify-content: center;
+    max-width: 1440px;
+}
+
+.featured_collection_2_box1 {
+    width: 1067.5px;
+    height: 317.5px;
+    background-color: var(--dark-gray-2);
+    border: 1px solid #0096e5;
+    border-radius: 15px;
+    position: relative;
+}
+
+.featured_collection_2_box2 {
+    width: 1067.5px;
+    height: 317.5px;
+    background-color: var(--dark-gray-2);
+    border: 1px solid #0096e5;
+    border-radius: 15px;
+    position: relative;
+}
+
+/* Título centralizado */
+.featured_collection_2_box2::before {
+    content: "Coleções em destaque";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 0 15px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
